@@ -13,3 +13,13 @@ Here I show all the functions I plotted using python.
 ![Log Function](/home/carlos/REPOS/python_interm_exercises/data/plot_images/Log_function.png "Logarithmic FUnction")
 
 ![Parabolic Function](/home/carlos/REPOS/python_interm_exercises/data/plot_images/Parabolic_Function.png "Parabolic Function")
+
+## First Scattered Plots
+
+![Square Root Function Scatter](/home/carlos/REPOS/python_interm_exercises/data/plot_images/Scatter: Square Root Function.png "Square Root Function")
+
+![Cubic Numbers](/home/carlos/REPOS/python_interm_exercises/data/plot_images/cubic_numbers.png "Cubic Numbers")
+
+![Colormap Cubic Function](/home/carlos/REPOS/python_interm_exercises/data/plot_images/colormap_cubic_function.png "Colormap Cubic Function")
+
+## Random Walks
