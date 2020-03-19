@@ -1,0 +1,72 @@
+#!/usr/bin/python3
+
+import os
+
+"""
+This script was created to transcode videos files.
+Make sure you have ffmpeg installed and run this
+script on Linux.
+
+WARNING: This script is a demo. I'm currently
+working on refactoring.
+
+Author: Carlos
+"""
+
+# Videos to transcode.
+videos = os.listdir()
+
+for video in videos:
+    if "avi" in video:
+        print(video)
+
+# Selecting the video format.
+formatting = input("Enter the output format: ")
+
+# Format preview.
+new_videos = []
+for output_preview in videos:
+    if "avi" in output_preview:
+        preview = output_preview.replace("avi", formatting)
+        print(preview)
+        new_videos.append(preview) 
+
+# Format confirmation.
+confirm = input("Continue? (y/n): ")
+
+# Command creation.
+command_1 = "ffmpeg -i "
+command_2 = "-qscale 0 "
+
+format_command_1 = []
+
+for video_source in videos:
+    if "avi" in video_source:
+        ffmpeg_1 = command_1 + video_source
+    #    print(ffmpeg_1)
+        format_command_1.append(ffmpeg_1)
+
+format_command_2 = []
+
+for video_output in new_videos:
+    ffmpeg_2 = command_2 + video_output
+#    print(ffmpeg_2)
+    format_command_2.append(ffmpeg_2)
+
+
+complete_command = []
+
+for c_command in range(len(format_command_1)):
+    complete = format_command_1[c_command] + " " + format_command_2[c_command]
+    #print(complete)
+    complete_command.append(complete)
+
+# Conversion
+if confirm == "y":
+    for conversion in complete_command:
+        os.system(conversion)
+    print("Conversions completed.")
+elif confirm == "n":
+    print("Operation aborted.")
+else:
+    print("Unknown command.")
