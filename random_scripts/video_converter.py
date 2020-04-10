@@ -7,8 +7,6 @@ This script was created to transcode videos files.
 Make sure you have ffmpeg installed and run this
 script on Linux.
 
-WARNING: This script is a demo. I'm currently
-working on refactoring.
 
 Author: Carlos
 """
@@ -16,8 +14,9 @@ Author: Carlos
 # Videos to transcode.
 videos = os.listdir()
 
+format_input = input("Enter the input format: ")
 for video in videos:
-    if "avi" in video:
+    if format_input in video:
         print(video)
 
 # Selecting the video format.
@@ -26,8 +25,8 @@ formatting = input("Enter the output format: ")
 # Format preview.
 new_videos = []
 for output_preview in videos:
-    if "avi" in output_preview:
-        preview = output_preview.replace("avi", formatting)
+    if format_input in output_preview:
+        preview = output_preview.replace(format_input, formatting)
         print(preview)
         new_videos.append(preview) 
 
@@ -41,7 +40,7 @@ command_2 = "-qscale 0 "
 format_command_1 = []
 
 for video_source in videos:
-    if "avi" in video_source:
+    if format_input in video_source:
         ffmpeg_1 = command_1 + video_source
     #    print(ffmpeg_1)
         format_command_1.append(ffmpeg_1)
