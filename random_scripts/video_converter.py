@@ -41,15 +41,15 @@ format_command_1 = []
 
 for video_source in videos:
     if format_input in video_source:
-        ffmpeg_1 = command_1 + video_source
-    #    print(ffmpeg_1)
+        ffmpeg_1 = command_1 + "\"" + video_source + "\""
+        #print(ffmpeg_1)
         format_command_1.append(ffmpeg_1)
 
 format_command_2 = []
 
 for video_output in new_videos:
-    ffmpeg_2 = command_2 + video_output
-#    print(ffmpeg_2)
+    ffmpeg_2 = command_2 + "\"" + video_output + "\""
+    #print(ffmpeg_2)
     format_command_2.append(ffmpeg_2)
 
 
@@ -69,3 +69,8 @@ elif confirm == "n":
     print("Operation aborted.")
 else:
     print("Unknown command.")
+
+# Automatic video converter edited successfully.
+# Issue solved: Name of input videos with spaces and output
+#               videos with spaces.
+# Solution: Putting input videos and output videos in double quotes.

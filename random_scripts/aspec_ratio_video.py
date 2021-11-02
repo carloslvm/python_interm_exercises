@@ -8,6 +8,10 @@ using ffmpeg.
 
 Make sure you have ffmpeg installed and run this
 script on Linux enviroment.
+
+Important Note: This script was created assuming that
+the directory containing the all files to be transcoded
+are mp4 format. You may want to modify it in the future.
 """ 
 # Video Sources
 videos = os.listdir()
@@ -55,6 +59,6 @@ for c_command in range(len(format_command_1)):
     complete_command.append(complete)
 
 # Executing command
-#for execute in complete_command:
-#    os.system(execute)
+for execute in complete_command:
+    os.system(execute)
 print("Conversion completed.")

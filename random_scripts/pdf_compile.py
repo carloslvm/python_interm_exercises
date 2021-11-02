@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+#import re
 import os
 
 """
@@ -26,3 +27,9 @@ print('File Selected:', tex_compile)
 pdf_command = 'pdflatex {0}'.format(tex_compile)
 
 os.system(pdf_command)
+
+# Issue to solve: discriminate 
+
+# Issue to solve: discriminate any file that does not end
+#                 with .tex extension.
+# Possible solution: Try using python3 regex
