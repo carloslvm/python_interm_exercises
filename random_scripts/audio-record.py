@@ -6,7 +6,11 @@ import os
 This script will record audio either from Mic or from
 PC, or even from both devices.
 
-Make sure to have ffmpeg on your system to use it.
+This script was created and tested on a Linux system, so
+make sure to have ffmpeg and pulseaudio installed
+on your system (if you're using Linux) to use it.
+
+Author: Carlos
 """
 
 
