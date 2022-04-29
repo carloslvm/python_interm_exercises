@@ -35,7 +35,8 @@ confirm = input("Continue? (y/n): ")
 
 # Command creation.
 command_1 = "ffmpeg -i "
-command_2 = "-qscale 0 "
+#command_2 = "-qscale 0 "
+command_2 = "-c:v copy -c:a copy " # Faster conversion, not recommended for avi
 
 format_command_1 = []
 
@@ -60,6 +61,10 @@ for c_command in range(len(format_command_1)):
     #print(complete)
     complete_command.append(complete)
 
+# Creating output directory
+result = "mkdir result" 
+os.system(result)
+
 # Conversion
 if confirm == "y":
     for conversion in complete_command:
@@ -70,7 +75,15 @@ elif confirm == "n":
 else:
     print("Unknown command.")
 
+# Sending output videos to result directory
+move_command = "mv -v *" + formatting + " result/"
+os.system(move_command)
+
+
 # Automatic video converter edited successfully.
 # Issue solved: Name of input videos with spaces and output
 #               videos with spaces.
 # Solution: Putting input videos and output videos in double quotes.
+
+# Faster conversion added.
+# Send output to a new directory.
