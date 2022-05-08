@@ -5,7 +5,8 @@ import os
 """
 This script was created to transcode videos files.
 Make sure you have ffmpeg installed and run this
-script on Linux.
+script in the directory where the files you want
+to convert are located on your Linux system.
 
 
 Author: Carlos
