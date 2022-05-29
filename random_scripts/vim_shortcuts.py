@@ -5,7 +5,7 @@ This script is connected to vim_keys.py script. It allows
 to show my personal Vim keybindings in a neatly format
 using dmenu.
 
-It required to have dmenu installed on your Linux distro
+It requires to have dmenu installed on your Linux distro
 to make it work.
 
 Author: Carlos
