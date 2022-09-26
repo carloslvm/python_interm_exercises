@@ -16,15 +16,15 @@ Author: Carlos
 
 # Using pulseaudio and basic audio settings from system
 use_pulse = "pulse "
-device_input = "alsa_input.pci-0000_00_1b.0.analog-stereo "
-device_monitor = "alsa_output.pci-0000_00_1b.0.analog-stereo.monitor "
+device_input = "alsa_input.pci-0000_00_1b.0.analog-stereo " # Mic
+device_monitor = "alsa_output.pci-0000_00_1b.0.analog-stereo.monitor " # PC
 
 # Specify Audio Channels
 prompt_channel = "Enter the amount of audio channel (1 mono, 2 stereo): "
 audio_channels = input(prompt_channel)
 
 # Specify Audio rate
-prompt_rate = "Enter audio sample rate: "
+prompt_rate = "Enter audio sample rate (Example: 44100): "
 audio_rate = input(prompt_rate)
 
 # Specify output format and name of the file
@@ -35,14 +35,14 @@ mix = " -filter_complex amix=inputs=2 "
 ffmpeg = "ffmpeg -f "
 
 ########################################
-# Recording audio from PC only
+# Recording audio devices selection.
 prompt_record = "Do you want to record your PC, Mic, or both? (p/m/b): "
 record_mode = input(prompt_record)
 
 # Audio monitoring properties section
 monitoring_pro = "-ac " + audio_channels + " -ar " + audio_rate
 
-# Device to record and output file
+# Device to record and output file (PC audio)
 output_daudio = " -i " + device_monitor  + output
 
 pc_record = ffmpeg + use_pulse + monitoring_pro + output_daudio
