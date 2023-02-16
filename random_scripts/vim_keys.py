@@ -2,7 +2,7 @@
 
 """
 This script reads my personal vimrc file and filter my
-custome keybindings. As preference, I put this script
+custom keybindings. As preference, I put this script
 in the same directory where the vimrc file is located.
 
 If you want to save this in a different directory, make
